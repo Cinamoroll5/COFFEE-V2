@@ -12,6 +12,14 @@ app=flask.Flask("COFFEE APP")
 @app.route("/" ,methods=["get","post"])
 
 def HOME():
+    global allcoffee
+    if flask.request.method=="POST":
+        coffeenumber=flask.request.form.get("coffeenumber")
+        print(int(coffeenumber)-1)
+        allcoffee.pop(int(coffeenumber)-1)
+        file=open("me.json","w")
+        json.dump(allcoffee,file)
+        file.close()
     return flask.render_template("HOME🧋.HTML",allcoffeessss=allcoffee)
 
 
@@ -64,5 +72,5 @@ def ADD():
 
 
 
-# unicorn will run our app
-# app.run()
+#unicorn will run our app
+#app.run()
