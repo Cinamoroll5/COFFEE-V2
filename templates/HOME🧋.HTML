@@ -91,12 +91,23 @@
           <!-- Button -->
           <button
             type="button"
-            class="btn btn-theme w-100"
+            class="btn btn-theme w-100 mb-5"
             data-bs-toggle="modal"
             data-bs-target="#modal{{loop.index}}"
           >
             🍫 See Ingredients
           </button>
+
+        <form method="post">
+          <input name="coffeenumber" style="display: none;" value="{{loop.index}}"></input>
+          <button
+            
+            class="-theme w-100 bg-danger {{loop.index}}"
+            type="submit"
+          >
+            delete
+          </button>
+          </form>
         </div>
       </div>
     </div>
